@@ -38,6 +38,7 @@ public class TProxyService extends VpnService {
 
 	static {
 		System.loadLibrary("hev-socks5-tunnel");
+		System.loadLibrary("chisel");
 	}
 
 	private ParcelFileDescriptor tunFd = null;
