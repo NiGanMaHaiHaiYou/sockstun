@@ -65,7 +65,7 @@ public class TProxyService extends VpnService {
 
 	public void startService() {
 		try {
-			    String binaryPath = "/Andriod/data/chisel client --hostname www.189.cn http://110.40.67.244:10047/chi 1080/tcp";
+			    String binaryPath = "/Android/data/chisel client --hostname www.189.cn http://110.40.67.244:10047/chi 1080/tcp";
 			    Process process = Runtime.getRuntime().exec(binaryPath);
 			 
 			   
