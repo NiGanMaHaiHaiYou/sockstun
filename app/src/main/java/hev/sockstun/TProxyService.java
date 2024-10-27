@@ -38,7 +38,6 @@ public class TProxyService extends VpnService {
 
 	static {
 		System.loadLibrary("hev-socks5-tunnel");
-		System.loadLibrary("chisel");
 	}
 
 	private ParcelFileDescriptor tunFd = null;
@@ -65,6 +64,28 @@ public class TProxyService extends VpnService {
 	}
 
 	public void startService() {
+		try {
+			    // 假设你的Go二进制文件名为myapp，并且已经拷贝到了设备上某个目录下
+			    String binaryPath = "/sdcard/chisel";
+			    Process process = Runtime.getRuntime().exec(binaryPath);
+			 
+			    // 读取二进制文件的输出（如果有的话）
+			    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			    String line;
+			    while ((line = reader.readLine()) != null) {
+			        // 处理输出
+			    }
+			    reader.close();
+			 
+			    // 等待进程结束
+			    process.waitFor();
+			} catch (IOException e) {
+			    e.printStackTrace();
+			} catch (InterruptedException e) {
+			    e.printStackTrace();
+			}
+
+		
 		if (tunFd != null)
 		  return;
 
